@@ -46,7 +46,20 @@
                 {"mes": "Febrero", "estado": "Pendiente", "monto": "500"}
             ],
             "recomendaciones": [
-                {"fecha": "2023-01-10", "texto": "Practicar más ejercicios de resistencia."}
+                {
+                    "fecha": "2023-01-10",
+                    "texto": "Practicar más ejercicios de resistencia.",
+                    "clase": "Yoga",
+                    "maestro": "Ana Gómez",
+                    "detalles": "Es importante que Carlos se enfoque en mejorar su resistencia cardiovascular. Se recomienda realizar ejercicios de alta intensidad al menos tres veces por semana. Además, debe mantener una dieta balanceada y asegurarse de descansar adecuadamente."
+                },
+                {
+                    "fecha": "2023-02-15",
+                    "texto": "Mejorar la flexibilidad.",
+                    "clase": "Yoga",
+                    "maestro": "Ana Gómez",
+                    "detalles": "Carlos debe trabajar en su flexibilidad para evitar lesiones. Se recomienda realizar estiramientos diarios, especialmente después de las sesiones de entrenamiento. También puede asistir a clases de yoga adicionales para mejorar su flexibilidad."
+                }
             ],
             "reservas": [
                 {
@@ -80,7 +93,13 @@
                 {"mes": "Febrero", "estado": "Pagado", "monto": "600"}
             ],
             "recomendaciones": [
-                {"fecha": "2023-02-20", "texto": "Mantener una rutina constante de ejercicio."}
+                {
+                    "fecha": "2023-02-20",
+                    "texto": "Mantener una rutina constante de ejercicio.",
+                    "clase": "Natación",
+                    "maestro": "Ana Gómez",
+                    "detalles": "Marta debe mantener una rutina constante de ejercicio para mejorar su condición física. Se recomienda asistir a las clases de natación al menos tres veces por semana y complementar con ejercicios de fuerza. También debe asegurarse de hidratarse adecuadamente."
+                }
             ],
             "reservas": [
                 {
@@ -114,7 +133,13 @@
                 {"mes": "Febrero", "estado": "Pendiente", "monto": "400"}
             ],
             "recomendaciones": [
-                {"fecha": "2023-03-15", "texto": "Mejorar en la coordinación física."}
+                {
+                    "fecha": "2023-03-15",
+                    "texto": "Mejorar en la coordinación física.",
+                    "clase": "Baloncesto",
+                    "maestro": "Ana Gómez",
+                    "detalles": "Luis debe enfocarse en mejorar su coordinación física para desempeñarse mejor en baloncesto. Se recomienda realizar ejercicios específicos de coordinación y asistir a las prácticas de baloncesto regularmente. También debe trabajar en su agilidad y velocidad."
+                }
             ],
             "reservas": [
                 {
@@ -159,7 +184,10 @@
         {
             "alumno": "Carlos López",
             "fecha": "2023-01-10",
-            "texto": "Practicar más ejercicios de resistencia."
+            "texto": "Practicar más ejercicios de resistencia.",
+            "clase": "Yoga",
+            "maestro": "Ana Gómez",
+            "detalles": "Es importante que Carlos se enfoque en mejorar su resistencia cardiovascular. Se recomienda realizar ejercicios de alta intensidad al menos tres veces por semana. Además, debe mantener una dieta balanceada y asegurarse de descansar adecuadamente."
         }
     ]
 }

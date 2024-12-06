@@ -81,7 +81,6 @@ async function cargarDatosAlumno() {
         console.error("Error al cargar los datos del alumno:", error);
     }
 }
-
 async function guardarDatos(datos) {
     try {
         await fetch("admin_datos.txt", {

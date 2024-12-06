@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestionar Pagos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Gestionar Pagos</h1>
+    </header>
+    <main>
+        <!-- Formulario de pago -->
+        <section id="formPago" style="display:none;">
+            <h2>Realizar Pago</h2>
+            <form id="pagoFormulario">
+                <label for="mesPago">Mes:</label>
+                <input type="text" id="mesPago" required>
+                <label for="montoPago">Monto:</label>
+                <input type="number" id="montoPago" required>
+                <label for="comprobantePago">Comprobante de Pago:</label>
+                <input type="file" id="comprobantePago" accept="image/*,application/pdf" required>
+                <button type="submit">Iniciar Transacción</button>
+                <button type="button" id="cancelarPago">Cancelar</button>
+            </form>
+        </section>
+
+        <!-- Historial de Pagos -->
+        <section>
+            <h2>Historial de Pagos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mes</th>
+                        <th>Monto</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaPagos">
+                    <!-- Se cargan los pagos dinámicamente -->
+                </tbody>
+            </table>
+            <button id="gestionarPago">Revisar Pago</button>
+        </section>
+
+        <!-- Botones de Volver y Cerrar Sesión -->
+        <section>
+            <button id="volver">Volver</button>
+            <button id="logoutButton">Cerrar Sesión</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Sistema de Gestión Deportiva</p>
+    </footer>
+    <script src="gestionarPagos.js"></script>
+</body>
+</html>

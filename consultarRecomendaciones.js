@@ -79,6 +79,21 @@ async function cargarDatosAlumno() {
             const alumno = new Alumno(alumnoData);
             alumno.consultarRecomendaciones();
 
+            // Botón de Actualizar
+            const actualizarBtn = document.getElementById("actualizar");
+            if (actualizarBtn) {
+                actualizarBtn.addEventListener("click", () => {
+                    const pagoValido = localStorage.getItem("pagoValido");
+                    if (pagoValido === "true") {
+                        alumno.consultarRecomendaciones();
+                    } else {
+                        alert("El pago no se ha reflejado. Por favor, intente nuevamente.");
+                    }
+                });
+            } else {
+                console.error("No se encontró el botón de actualizar.");
+            }
+
             // Botón de Volver
             document.getElementById("volver").addEventListener("click", () => {
                 window.history.back();

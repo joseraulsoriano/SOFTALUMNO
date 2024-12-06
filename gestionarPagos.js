@@ -43,6 +43,7 @@ class Alumno {
                     alert("Pago registrado exitosamente.");
                     this.actualizarHistorialPagos();
                     document.getElementById("formPago").style.display = "none"; // Ocultar formulario de pago
+                    await actualizarEstadoPago(this.id, "pagado"); // Actualizar estado en la base de datos simulada
                 } else {
                     console.log("Pago rechazado");
                     alert("Comprobante de pago inválido.");
@@ -124,6 +125,27 @@ class Alumno {
         } else {
             console.error("No se encontró el contenedor de la tabla de pagos.");
         }
+    }
+}
+
+// Función para actualizar el estado del pago en la base de datos simulada
+async function actualizarEstadoPago(alumnoId, estado) {
+    try {
+        const response = await fetch(`actualizar_estado_pago/${alumnoId}`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ estado: estado })
+        });
+
+        if (!response.ok) {
+            throw new Error("Error al actualizar el estado del pago");
+        }
+
+        console.log("Estado del pago actualizado correctamente");
+    } catch (error) {
+        console.error("Error al actualizar el estado del pago:", error);
     }
 }
 

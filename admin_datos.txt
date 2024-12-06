@@ -1,12 +1,14 @@
 {
     "usuarios": [
         {
+            "id": 1,
             "nombre": "Juan Pérez",
             "rol": "administrador",
             "email": "juan.perez@example.com",
             "password": "admin123"
         },
         {
+            "id": 2,
             "nombre": "Ana Gómez",
             "rol": "maestro",
             "email": "ana.gomez@example.com",
@@ -21,6 +23,7 @@
             ]
         },
         {
+            "id": 3,
             "nombre": "Carlos López",
             "rol": "alumno",
             "email": "carlos.lopez@example.com",
@@ -54,6 +57,7 @@
             ]
         },
         {
+            "id": 4,
             "nombre": "Marta Díaz",
             "rol": "alumno",
             "email": "marta.diaz@example.com",
@@ -87,6 +91,7 @@
             ]
         },
         {
+            "id": 5,
             "nombre": "Luis Rodríguez",
             "rol": "alumno",
             "email": "luis.rodriguez@example.com",

@@ -1,0 +1,160 @@
+{
+    "usuarios": [
+        {
+            "nombre": "Juan Pérez",
+            "rol": "administrador",
+            "email": "juan.perez@example.com",
+            "password": "admin123"
+        },
+        {
+            "nombre": "Ana Gómez",
+            "rol": "maestro",
+            "email": "ana.gomez@example.com",
+            "password": "maestro123",
+            "especialidades": ["Yoga", "Meditación"],
+            "clases": [
+                {
+                    "disciplina": "Yoga",
+                    "horario": "10:00 AM - 11:00 AM",
+                    "alumnos": ["Carlos López"]
+                }
+            ]
+        },
+        {
+            "nombre": "Carlos López",
+            "rol": "alumno",
+            "email": "carlos.lopez@example.com",
+            "password": "alumno123",
+            "edad": 20,
+            "nivelEstudio": "Universitario",
+            "dondeEstudia": "Universidad Nacional",
+            "queEstudia": "Ingeniería",
+            "interesDisciplina": "Fútbol",
+            "disciplinasPrevias": ["Natación", "Baloncesto"],
+            "telefono": "123456789",
+            "matricula": "2023456",
+            "fechaNacimiento": "2003-01-15",
+            "domicilio": "Calle Falsa 123",
+            "lugarNacimiento": "Ciudad de México",
+            "peso": 70,
+            "altura": 175,
+            "estadoPagos": [
+                {"mes": "Enero", "estado": "Pagado", "monto": "500"},
+                {"mes": "Febrero", "estado": "Pendiente", "monto": "500"}
+            ],
+            "recomendaciones": [
+                {"fecha": "2023-01-10", "texto": "Practicar más ejercicios de resistencia."}
+            ],
+            "reservas": [
+                {
+                    "disciplina": "Yoga",
+                    "horario": "10:00 AM - 11:00 AM",
+                    "fecha": "2024-12-05"
+                }
+            ]
+        },
+        {
+            "nombre": "Marta Díaz",
+            "rol": "alumno",
+            "email": "marta.diaz@example.com",
+            "password": "alumna123",
+            "edad": 22,
+            "nivelEstudio": "Posgrado",
+            "dondeEstudia": "Universidad Politécnica",
+            "queEstudia": "Arquitectura",
+            "interesDisciplina": "Natación",
+            "disciplinasPrevias": ["Fútbol", "Yoga"],
+            "telefono": "987654321",
+            "matricula": "2023457",
+            "fechaNacimiento": "2002-03-10",
+            "domicilio": "Avenida Siempre Viva 456",
+            "lugarNacimiento": "Madrid",
+            "peso": 60,
+            "altura": 168,
+            "estadoPagos": [
+                {"mes": "Enero", "estado": "Pagado", "monto": "600"},
+                {"mes": "Febrero", "estado": "Pagado", "monto": "600"}
+            ],
+            "recomendaciones": [
+                {"fecha": "2023-02-20", "texto": "Mantener una rutina constante de ejercicio."}
+            ],
+            "reservas": [
+                {
+                    "disciplina": "Meditación",
+                    "horario": "4:00 PM - 5:00 PM",
+                    "fecha": "2024-12-12"
+                }
+            ]
+        },
+        {
+            "nombre": "Luis Rodríguez",
+            "rol": "alumno",
+            "email": "luis.rodriguez@example.com",
+            "password": "alumno456",
+            "edad": 18,
+            "nivelEstudio": "Bachillerato",
+            "dondeEstudia": "Preparatoria México",
+            "queEstudia": "Ciencias Sociales",
+            "interesDisciplina": "Baloncesto",
+            "disciplinasPrevias": ["Natación", "Fútbol"],
+            "telefono": "5647382910",
+            "matricula": "2023458",
+            "fechaNacimiento": "2005-06-17",
+            "domicilio": "Calle Ficticia 789",
+            "lugarNacimiento": "Guadalajara",
+            "peso": 75,
+            "altura": 182,
+            "estadoPagos": [
+                {"mes": "Enero", "estado": "Pendiente", "monto": "400"},
+                {"mes": "Febrero", "estado": "Pendiente", "monto": "400"}
+            ],
+            "recomendaciones": [
+                {"fecha": "2023-03-15", "texto": "Mejorar en la coordinación física."}
+            ],
+            "reservas": [
+                {
+                    "disciplina": "Yoga",
+                    "horario": "10:00 AM - 11:00 AM",
+                    "fecha": "2024-12-10"
+                }
+            ]
+        }
+    ],
+    "clases": [
+        {
+            "disciplina": "Yoga",
+            "horario": "10:00 AM - 11:00 AM",
+            "capacidad": 10,
+            "alumnos": ["Carlos López", "Luis Rodríguez"],
+            "profesor": "Ana Gómez"
+        },
+        {
+            "disciplina": "Meditación",
+            "horario": "4:00 PM - 5:00 PM",
+            "capacidad": 5,
+            "alumnos": ["Marta Díaz"],
+            "profesor": "Ana Gómez"
+        }
+    ],
+    "pagos": [
+        {
+            "alumno": "Carlos López",
+            "mes": "Enero",
+            "estado": "Pagado",
+            "monto": "500"
+        },
+        {
+            "alumno": "Carlos López",
+            "mes": "Febrero",
+            "estado": "Pendiente",
+            "monto": "500"
+        }
+    ],
+    "recomendaciones": [
+        {
+            "alumno": "Carlos López",
+            "fecha": "2023-01-10",
+            "texto": "Practicar más ejercicios de resistencia."
+        }
+    ]
+}

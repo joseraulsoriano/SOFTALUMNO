@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perfil</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Editar Perfil</h1>
+    </header>
+    <main>
+        <!-- Perfil del Alumno -->
+        <section>
+            <h2>Mi Perfil</h2>
+            <div id="perfilAlumno">
+                <!-- Aquí se cargarán los datos del alumno dinámicamente -->
+            </div>
+            <button id="editarPerfil">Editar Perfil</button>
+        </section>
+
+        <!-- Formulario para editar perfil -->
+        <section id="formularioEditar" style="display:none;">
+            <h2>Editar Perfil</h2>
+            <form id="editarFormulario">
+                <label for="campoEditar">Selecciona el campo a editar:</label>
+                <select id="campoEditar">
+                    <option value="nivelEstudio">Nivel de Estudio</option>
+                    <option value="dondeEstudia">Donde Estudia</option>
+                    <option value="queEstudia">Qué Estudia</option>
+                    <option value="interesDisciplina">Interés de Disciplina</option>
+                    <option value="disciplinasPrevias">Disciplinas Previas</option>
+                    <option value="telefono">Teléfono</option>
+                    <option value="fechaNacimiento">Fecha de Nacimiento</option>
+                </select>
+                <br>
+                <label for="nuevoValor">Nuevo valor:</label>
+                <input type="text" id="nuevoValor" required />
+                <br>
+                <button type="submit">Actualizar Información</button>
+                <button type="button" id="cancelarEdicion">Cancelar</button>
+            </form>
+        </section>
+
+        <!-- Botones de Volver y Cerrar Sesión -->
+        <section>
+            <button id="volver">Volver</button>
+            <button id="logoutButton">Cerrar Sesión</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Sistema de Gestión Deportiva</p>
+    </footer>
+    <script src="editarPerfil.js"></script>
+</body>
+</html>

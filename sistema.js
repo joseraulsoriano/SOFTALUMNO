@@ -1,4 +1,4 @@
-// Función para cargar los usuarios desde el archivo usuarios.txt
+// Función para cargar los usuarios desde el archivo admin_datos.txt
 async function cargarUsuarios() {
     try {
         const response = await fetch("admin_datos.txt");
@@ -61,3 +61,18 @@ function redirigirPorRol(usuarios, usuario) {
         alert("Error: Rol no encontrado.");
     }
 }
+
+// Mostrar correos y contraseñas de los alumnos
+document.addEventListener("DOMContentLoaded", async () => {
+    const usuarios = await cargarUsuarios();
+    const listaAlumnos = document.getElementById("listaAlumnos");
+    if (usuarios) {
+        usuarios.forEach(usuario => {
+            if (usuario.rol === "alumno") {
+                const li = document.createElement("li");
+                li.textContent = `Correo: ${usuario.email}, Contraseña: ${usuario.password}`;
+                listaAlumnos.appendChild(li);
+            }
+        });
+    }
+});

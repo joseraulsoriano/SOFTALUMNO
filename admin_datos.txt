@@ -1,13 +1,6 @@
 {
     "usuarios": [
         {
-            "id": 1,
-            "nombre": "Juan Pérez",
-            "rol": "administrador",
-            "email": "juan.perez@example.com",
-            "password": "admin123"
-        },
-        {
             "id": 2,
             "nombre": "Ana Gómez",
             "rol": "maestro",
@@ -148,6 +141,53 @@
                     "fecha": "2024-12-10"
                 }
             ]
+        },
+        {
+            "id": 6,
+            "nombre": "Laura Martínez",
+            "rol": "alumno",
+            "email": "laura.martinez@example.com",
+            "password": "alumna789",
+            "edad": 21,
+            "nivelEstudio": "Universitario",
+            "dondeEstudia": "Instituto Tecnológico",
+            "queEstudia": "Diseño Gráfico",
+            "interesDisciplina": "Pilates",
+            "disciplinasPrevias": ["Yoga", "Natación"],
+            "telefono": "1239874560",
+            "matricula": "2023459",
+            "fechaNacimiento": "2002-05-22",
+            "domicilio": "Calle Imaginaria 456",
+            "lugarNacimiento": "Monterrey",
+            "peso": 65,
+            "altura": 170,
+            "estadoPagos": [
+                {"mes": "Enero", "estado": "Pagado", "monto": "450"},
+                {"mes": "Febrero", "estado": "Pagado", "monto": "450"}
+            ],
+            "recomendaciones": [
+                {
+                    "fecha": "2023-03-10",
+                    "texto": "Mejorar la postura.",
+                    "clase": "Pilates",
+                    "maestro": "Ana Gómez",
+                    "detalles": "Laura debe enfocarse en mejorar su postura para evitar problemas de espalda. Se recomienda realizar ejercicios de fortalecimiento del core y asistir a clases de pilates regularmente."
+                },
+                {
+                    "fecha": "2023-04-15",
+                    "texto": "Aumentar la resistencia.",
+                    "clase": "Pilates",
+                    "maestro": "Ana Gómez",
+                    "detalles": "Laura debe trabajar en aumentar su resistencia para mejorar su rendimiento en las clases de pilates. Se recomienda realizar ejercicios cardiovasculares y de fuerza al menos tres veces por semana."
+                }
+            ],
+            "reservas": [
+                {
+                    "disciplina": "Pilates",
+                    "horario": "9:00 AM - 10:00 AM",
+                    "fecha": "2024-12-15"
+                }
+            ]
         }
     ],
     "clases": [
@@ -163,6 +203,13 @@
             "horario": "4:00 PM - 5:00 PM",
             "capacidad": 5,
             "alumnos": ["Marta Díaz"],
+            "profesor": "Ana Gómez"
+        },
+        {
+            "disciplina": "Pilates",
+            "horario": "9:00 AM - 10:00 AM",
+            "capacidad": 8,
+            "alumnos": ["Laura Martínez"],
             "profesor": "Ana Gómez"
         }
     ],

@@ -13,9 +13,12 @@ class Pago {
 
 // Clase Recomendacion
 class Recomendacion {
-    constructor(fecha, texto) {
+    constructor(fecha, texto, clase, maestro, detalles) {
         this.fecha = fecha;
         this.texto = texto;
+        this.clase = clase;
+        this.maestro = maestro;
+        this.detalles = detalles;
     }
 
     mostrar() {
@@ -23,6 +26,9 @@ class Recomendacion {
             <div class="recomendacion">
                 <p><strong>Fecha:</strong> ${this.fecha}</p>
                 <p><strong>Texto:</strong> ${this.texto}</p>
+                <p><strong>Clase:</strong> ${this.clase}</p>
+                <p><strong>Maestro:</strong> ${this.maestro}</p>
+                <p><strong>Detalles:</strong> ${this.detalles}</p>
             </div>
         `;
     }
@@ -33,7 +39,7 @@ class Alumno {
     constructor(datos) {
         Object.assign(this, datos);
         this.estadoPagos = this.estadoPagos.map(p => new Pago(p.mes, p.monto, p.estado));
-        this.recomendaciones = this.recomendaciones.map(r => new Recomendacion(r.fecha, r.texto));
+        this.recomendaciones = this.recomendaciones.map(r => new Recomendacion(r.fecha, r.texto, r.clase, r.maestro, r.detalles));
     }
 
     consultarRecomendaciones() {
@@ -47,15 +53,23 @@ class Alumno {
                 <p>Detalles de adeudos:</p>
                 <p>${detalleAdeudos}</p>
             `;
+            document.getElementById("actualizar").style.display = "block"; // Mostrar botón de actualizar
         } else if (this.recomendaciones.length === 0) {
             contenedor.innerHTML = `<p>No hay recomendaciones disponibles en este momento.</p>`;
+            document.getElementById("actualizar").style.display = "none"; // Ocultar botón de actualizar
         } else {
-            contenedor.innerHTML = this.recomendaciones.map((r, index) => `
-                <div class="recomendacion">
-                    <p><strong>Fecha:</strong> ${r.fecha}</p>
-                    <button onclick="mostrarDetalleRecomendacion(${index})">Ver Detalle</button>
-                </div>
+            const select = document.createElement("select");
+            select.id = "selectRecomendacion";
+            select.innerHTML = this.recomendaciones.map((r, index) => `
+                <option value="${index}">Recomendación del ${r.fecha}</option>
             `).join("");
+            select.addEventListener("change", () => {
+                this.mostrarDetalleRecomendacion(select.value);
+            });
+            contenedor.innerHTML = "";
+            contenedor.appendChild(select);
+            this.mostrarDetalleRecomendacion(0); // Mostrar la primera recomendación por defecto
+            document.getElementById("actualizar").style.display = "none"; // Ocultar botón de actualizar
         }
     }
 
@@ -77,18 +91,14 @@ async function cargarDatosAlumno() {
 
         if (alumnoData) {
             const alumno = new Alumno(alumnoData);
+            localStorage.setItem("alumno", JSON.stringify(alumno)); // Guardar el alumno en localStorage
             alumno.consultarRecomendaciones();
 
             // Botón de Actualizar
             const actualizarBtn = document.getElementById("actualizar");
             if (actualizarBtn) {
                 actualizarBtn.addEventListener("click", () => {
-                    const pagoValido = localStorage.getItem("pagoValido");
-                    if (pagoValido === "true") {
-                        alumno.consultarRecomendaciones();
-                    } else {
-                        alert("El pago no se ha reflejado. Por favor, intente nuevamente.");
-                    }
+                    alumno.consultarRecomendaciones();
                 });
             } else {
                 console.error("No se encontró el botón de actualizar.");
@@ -103,6 +113,7 @@ async function cargarDatosAlumno() {
             document.getElementById("logoutButton").addEventListener("click", () => {
                 localStorage.removeItem("usuario");
                 localStorage.removeItem("rol");
+                localStorage.removeItem("alumno"); // Eliminar el alumno de localStorage
                 window.location.href = "index.html";
             });
         }
@@ -112,3 +123,24 @@ async function cargarDatosAlumno() {
 }
 
 document.addEventListener("DOMContentLoaded", cargarDatosAlumno);
+
+// Función global para mostrar el detalle de la recomendación
+function mostrarDetalleRecomendacion(index) {
+    const alumno = JSON.parse(localStorage.getItem("alumno"));
+    if (alumno && alumno.recomendaciones) {
+        const recomendacion = alumno.recomendaciones[index];
+        const detalleContainer = document.getElementById("detalleRecomendacion");
+        detalleContainer.innerHTML = `
+            <div class="recomendacion">
+                <p><strong>Fecha:</strong> ${recomendacion.fecha}</p>
+                <p><strong>Texto:</strong> ${recomendacion.texto}</p>
+                <p><strong>Clase:</strong> ${recomendacion.clase}</p>
+                <p><strong>Maestro:</strong> ${recomendacion.maestro}</p>
+                <p><strong>Detalles:</strong> ${recomendacion.detalles}</p>
+            </div>
+        `;
+        detalleContainer.style.display = "block";  // Mostrar el detalle
+    } else {
+        console.error("No se encontraron las recomendaciones del alumno.");
+    }
+}
